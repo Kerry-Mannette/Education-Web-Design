@@ -1,0 +1,374 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root sizing for rem units */
+html {
+  font-size: 16px; /* 1rem = 16px. Use 62.5% (10px) if you prefer 1rem = 10px */
+}
+
+:root {
+   /* Palette */
+   --color-primary: #5B2D9B; /* deep purple */
+   --color-accent:  #F39C12; /* warm orange */
+   --color-danger:  #E94E3C; /* bright red */
+
+   /* Neutrals */
+   --color-bg:     #ffffff;
+   --color-text:   #333333;
+   --color-muted:  #666666;
+  /* RGB versions for gradients (r, g, b) */
+  --color-primary-rgb: 91,45,155;
+  --color-accent-rgb: 243,156,18;
+ }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+.container {
+  width: 90%;
+  max-width: 75rem; /* 1200px */
+  margin: auto;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--color-primary);
+  padding: 1rem 0;
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-bg);
+}
+
+.logo img{
+  display:block;
+  height:2.125rem; /* 34px */
+  width:auto;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-bg);
+}
+
+/* Mobile toggle (hamburger) */
+.nav-toggle{
+  display:none; /* shown at small breakpoints */
+  background:transparent;
+  border:0;
+  color:var(--color-bg);
+  font-size:1.25rem;
+  cursor:pointer;
+}
+
+/* Menu panel - wraps nav, search and login so we can show/hide on mobile */
+.menu-panel{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 0.375rem; /* 6px */
+  background: var(--color-primary);
+  color: var(--color-bg);
+  font-weight: 600;
+  margin-right: 0.6rem;
+  border: 0;
+  text-decoration: none;
+}
+
+.btn:hover, .btn:focus {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+
+
+/* Search and login in nav */
+
+  /* Hero video */
+  .hero-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+  }
+
+  .hero-overlay{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    /* gradient using palette RGB vars */
+    background: linear-gradient(135deg, rgba(var(--color-primary-rgb),0.85) 0%, rgba(var(--color-accent-rgb),0.6) 100%);
+    pointer-events:none;
+  }
+  .hero-content{
+    position:relative;
+    z-index:2
+}
+  .hero-actions{
+    
+    margin-top:1.125rem
+} 
+
+
+/*Hero video end*/
+
+
+/* Nav search and login */
+.nav-search form{
+  display:flex;align-items:center;
+  gap:0.375rem
+}
+.nav-search input[type="search"]{
+  padding:0.375rem 0.5rem;
+  border:none;
+  border-radius:0.25rem;
+  width:7.5rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+.nav-search button{
+  background:var(--color-bg);
+  border: none;
+  padding:0.375rem 0.5rem;
+  border-radius:0.25rem;cursor:pointer;
+  color:var(--color-primary);
+}
+
+.nav-login{
+  margin-left:0.75rem; /* default desktop spacing */
+}
+
+/* Login link */
+
+.login-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  color:var(--color-bg);
+  padding:0.375rem 0.5rem;
+  border-radius:0.25rem;
+}
+.login-link i{
+  display:block;
+  font-size:1rem;
+}
+.nav-search button i{
+  font-size:0.95rem;
+}
+.login-text{
+    font-size:0.95rem
+}
+
+
+/* Hero */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 28.25rem; /* 420px */
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  position: relative;
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Stats */
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0;
+  text-align: center;
+}
+.stat-box span {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+.stat-box p {
+  margin-top: 0.5rem;
+}
+
+
+/* About */
+.about-section {
+  padding: 2rem 0;
+}
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.about-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.about-images img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* News */
+
+.news-section {
+  padding: 2rem 0;
+}
+
+.view-more {
+  text-align: center;
+  margin-top: 1rem;
+}
+.view-more button {
+  padding: 0.5rem 1.5rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 0.25rem; /* 4px */
+  cursor: pointer;
+}
+
+/*End News*/
+
+
+/* Alumni */
+
+.alumni-section {
+  padding: 2rem 0;
+}
+.alumni-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+.alumni-content img {
+  width: 100%;
+  max-width: 25rem; /* 400px */
+  height: auto;
+}
+
+/*Alumni End*/
+
+
+/* Footer */
+.footer {
+  background: var(--color-primary);
+  padding: 2rem 0;
+  text-align: center;
+}
+.footer-links {
+  margin-bottom: 1rem;
+}
+.footer-links a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #333;
+}
+/*Footer End*/
+
+
+
+
+/* Responsive*/
+@media (max-width:48rem){ /* 768px - include tablets */
+
+  .nav-content{gap:0.5rem}
+
+  .nav-search input[type="search"]{width:6rem}
+
+  /* show hamburger */
+  .nav-toggle{display:block}
+
+  /* hide the normal inline menu items for small screens */
+  .menu-panel{display:none}
+
+
+  .navbar.menu-open .menu-panel{
+    display:flex;
+    position:fixed;
+    inset:0;
+    z-index:1200;
+    background: linear-gradient(180deg, rgba(91,45,155,0.98), rgba(243,156,18,0.95));
+    padding:2rem;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:1.25rem;
+    overflow:auto;
+
+  }
+  .navbar.menu-open .menu-panel .nav-links{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    width:100%;
+  }
+
+  .navbar.menu-open .menu-panel .nav-links a{font-size:1.125rem}
+  .navbar.menu-open .menu-panel .nav-search,
+  .navbar.menu-open .menu-panel .nav-login{display:block;width:100%}
+
+  .nav-login{ margin-left:-0.25rem; }
+
+}
+
+
+.nav-toggle{
+  background:transparent;
+  border:0;
+}
+
+.navbar.menu-open .nav-toggle{
+  position:fixed;
+  top:1rem;
+  right:1rem;
+  z-index:1250; /* above the menu-panel */
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:2.25rem;
+  height:2.25rem;
+  font-size:1.25rem;
+  color:var(--color-bg);
+  background: rgba(0,0,0,0.18);
+  border-radius:0.375rem;
+}
+
+.nav-toggle:focus{
+  outline: 3px solid rgba(255,255,255,0.12);
+  outline-offset: 2px;
+}
