@@ -16,10 +16,14 @@ html {
    --color-accent:  #F39C12; /* warm orange */
    --color-danger:  #E94E3C; /* bright red */
 
-   /* Neutrals */
-   --color-bg:     #ffffff;
-   --color-text:   #333333;
-   --color-muted:  #666666;
+  
+  --color-white:  #ffffff;
+  --color-surface: #ffffff; /* use for card surfaces */
+  --color-border: #dddddd; /* subtle border */
+
+  /* Shadows (use as full box-shadow value) */
+  --shadow-1: 0 2px 8px rgba(0,0,0,0.10);
+  --shadow-2: 0 0.5rem 1rem rgba(0,0,0,0.12);
   /* RGB versions for gradients (r, g, b) */
   --color-primary-rgb: 91,45,155;
   --color-accent-rgb: 243,156,18;
@@ -100,7 +104,7 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   border-radius: 0.375rem;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.12);
+  box-shadow: var(--shadow-2);
   padding: 0.25rem 0;
   display: none;
   z-index: 1201;
@@ -174,7 +178,7 @@ body {
   position: relative;
   overflow: hidden;
   min-height: 28.25rem; /* 420px */
-  color: white;
+  color: var(--color-white);
   text-align: center;
   padding: 6rem 1rem;
 }
@@ -390,7 +394,7 @@ body {
   /* Accent border with rounded corners and subtle shadow */
   border: 0.25rem solid rgba(var(--color-accent-rgb), 0.95);
   border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-2);
   transition: transform 200ms ease, box-shadow 200ms ease;
   will-change: transform;
 }
@@ -398,7 +402,7 @@ body {
 .about-image img:hover,
 .about-images img:hover {
   transform: scale(1.035);
-  box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.12);
+  box-shadow: var(--shadow-2);
 }
 
 /* About actions */
@@ -425,7 +429,7 @@ body {
 .view-more button {
   padding: 0.5rem 1.5rem;
   background: var(--color-primary);
-  color: white;
+  color: var(--color-white);
   border: none;
   border-radius: 0.25rem; /* 4px */
   cursor: pointer;
@@ -470,7 +474,7 @@ body {
 .footer-links a {
   margin: 0 0.5rem;
   text-decoration: none;
-  color: #333;
+  color: var(--color-text);
 }
 /*Footer End*/
 
