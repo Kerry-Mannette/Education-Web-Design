@@ -206,21 +206,60 @@ body {
   font-size: 1.2rem;
 }
 
-/* Stats */
-.stats-section {
-  display: flex;
-  justify-content: space-around;
-  padding: 2rem 0;
-  text-align: center;
+/* Statistics section */
+.stats-section{
+    background: purple;
+    color:white;
+    text-align: center;
+    padding: 3rem 1.5rem;
 }
-.stat-box span {
+
+.stats-container{
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(4 , 1fr);
+   
+}
+
+.statistic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-icon{
+    background-color: orange;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+}
+
+.stat-icon i,
+.stat-icon img {
+  width: 40px;
+  height: 40px;
   font-size: 2rem;
-  font-weight: bold;
-  display: block;
+  color: white;
 }
-.stat-box p {
-  margin-top: 0.5rem;
+
+
+.statistic h3{
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
 }
+
+.statistic p{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
 
 
 /* About */
