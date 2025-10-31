@@ -16,7 +16,11 @@ html {
    --color-accent:  #F39C12; /* warm orange */
    --color-danger:  #E94E3C; /* bright red */
 
-  
+   /* Neutrals */
+   --color-bg:     #ffffff;
+   --color-text:   #333333;
+   --color-muted:  #666666;
+  /* Convenience aliases */
   --color-white:  #ffffff;
   --color-surface: #ffffff; /* use for card surfaces */
   --color-border: #dddddd; /* subtle border */
