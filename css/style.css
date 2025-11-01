@@ -7,7 +7,7 @@
 
 /* Root sizing for rem units */
 html {
-  font-size: 16px; /* 1rem = 16px. Use 62.5% (10px) if you prefer 1rem = 10px */
+  font-size: 1rem; /* root = 1rem (16px) */
 }
 
 :root {
@@ -24,13 +24,17 @@ html {
   --color-white:  #ffffff;
   --color-surface: #ffffff; /* use for card surfaces */
   --color-border: #dddddd; /* subtle border */
+  /* Light neutral */
+  --color-cream: #f7f4ee;
 
   /* Shadows (use as full box-shadow value) */
-  --shadow-1: 0 2px 8px rgba(0,0,0,0.10);
+  --shadow-1: 0 0.125rem 0.5rem rgba(0,0,0,0.10);
   --shadow-2: 0 0.5rem 1rem rgba(0,0,0,0.12);
   /* RGB versions for gradients (r, g, b) */
   --color-primary-rgb: 91,45,155;
   --color-accent-rgb: 243,156,18;
+
+  
  }
 
 body {
@@ -93,8 +97,8 @@ body {
 }
 
 .dropdown-toggle:focus { 
-  outline: 2px solid rgba(255,255,255,0.12);
-   outline-offset: 2px;
+  outline: 0.125rem solid rgba(255,255,255,0.12);
+   outline-offset: 0.125rem;
 }
 
 .dropdown-menu {
@@ -265,17 +269,29 @@ body {
 .nav-search form{
   display:flex;
   align-items:center;
-  gap:0.375rem
+  gap: 0;
 }
 
 .nav-search input{
   padding:0.375rem 0.5rem;
   border:none;
-  border-radius:0.25rem;
+  border-radius: 0.25rem; /* keep left corners rounded */
+  /* remove right-side corners so input visually joins the button */
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 2.25rem;
   width:12rem;
   min-width:8rem;
   background: var(--color-bg);
   color: var(--color-text);
+}
+
+/* Accent-focused state: use the theme accent as the focus ring and caret color */
+.nav-search input:focus,
+.nav-search input:focus-visible {
+  outline: none;
+  caret-color: var(--color-accent);
+  box-shadow: 0 0 0 0.1875rem rgba(var(--color-accent-rgb), 0.12);
 }
 
 
@@ -283,8 +299,10 @@ body {
   background:var(--color-bg);
   border: none;
   padding:0.375rem 0.5rem;
-  border-radius:0.25rem;
+  border-radius:0 0.25rem 0.25rem 0 ;
+  height: 2.25rem;
   cursor:pointer;
+  
   color:var(--color-primary);
 }
 
@@ -297,7 +315,7 @@ body {
 .login-link{
   display:inline-flex;
   align-items:center;
-  gap:8px;
+  gap:0.5rem;
   text-decoration:none;
   color:var(--color-bg);
   padding:0.375rem 0.5rem;
@@ -337,8 +355,8 @@ body {
 }
 
 .nav-toggle:focus{
-  outline: 3px solid rgba(255,255,255,0.12);
-  outline-offset: 2px;
+  outline: 0.1875rem solid rgba(255,255,255,0.12);
+  outline-offset: 0.125rem;
 }
 
 /* End Nav search and login */
@@ -374,14 +392,14 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
 }
 
 .stat-icon i,
 .stat-icon img {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   font-size: 2rem;
   color: #ffffff;
 }
@@ -406,14 +424,12 @@ body {
   padding: 2rem 0;
 }
 .about-content {
-  /* explicit grid with named areas for predictable layout */
+  /* two-column layout on desktop: text + image */
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "text"
-    "images";
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text images";
   gap: 2rem;
-  align-items: start;
+  align-items: center; /* vertically center text and image */
 }
 
 
@@ -429,14 +445,16 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: center; /* center image container so small images don't sit left */
 }
 .about-image img,
 .about-images img {
   width: 100%;
+  max-width: 28rem; 
   height: auto;
   display: block;
-  /* Accent border with rounded corners and subtle shadow */
-  border: 0.25rem solid rgba(var(--color-accent-rgb), 0.95);
+  justify-self: center;
+  border: none;
   border-radius: 0.5rem;
   box-shadow: var(--shadow-2);
   transition: transform 200ms ease, box-shadow 200ms ease;
@@ -454,7 +472,6 @@ body {
   margin-top: 1rem;
 }
 .btn-readmore {
-  /* reuse base .btn styles; make slightly smaller */
   padding: 0.45rem 0.85rem;
   font-size: 0.95rem;
 }
@@ -480,11 +497,11 @@ body {
 }
 
 .news-card {
-  background: #ffffff;
+  background: var(--color-cream);
   border-radius: 0.5rem;
   overflow: hidden;
   text-align: left;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease; 
@@ -496,10 +513,10 @@ body {
 }
 .news-card img {
   width: 100%;
-  height: 300px;
+  height: 18.75rem;
   object-fit: cover;
   display: block;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 0.0625rem solid #ffffff;
 }
 
 .card-content {
@@ -581,7 +598,7 @@ body {
 
 
 
-/* Tablet breakpoint: use hamburger navigation for tablet and smaller (<=1024px / 64rem) */
+/* Tablet breakpoint (<=1024px / 64rem) */
 @media (max-width:64rem) {
   /* show hamburger on tablets */
   .nav-toggle { 
@@ -647,7 +664,8 @@ body {
   .news-section .news-grid { 
     display: grid; grid-template-columns: repeat(2,1fr); gap: 1.75rem;
    }
-  /* Mobile/overlay: dropdown menus should flow inside the panel */
+
+ 
   .navbar.menu-open .menu-panel .dropdown-menu {
     position: static;
     background: transparent;
