@@ -54,6 +54,11 @@ body {
 .navbar {
   background: var(--color-primary);
   padding: 1rem 0;
+  position: sticky; /* keep navbar visible at top when scrolling */
+  top: 0;
+  z-index: 1200; /* sit above page content but below full-screen overlays */
+  width: 100%;
+  box-shadow: var(--shadow-1);
 }
 .nav-content {
   display: flex;
@@ -131,7 +136,7 @@ body {
 
 
 .dropdown-menu a:hover,
- .dropdown-menu a:focus { 
+.dropdown-menu a:focus { 
   background: rgba(0,0,0,0.04);
 }
 
