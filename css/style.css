@@ -24,12 +24,14 @@ html {
   --color-white:  #ffffff;
   --color-surface: #ffffff; /* use for card surfaces */
   --color-border: #dddddd; /* subtle border */
+
   /* Light neutral */
   --color-cream: #f7f4ee;
 
   /* Shadows (use as full box-shadow value) */
   --shadow-1: 0 0.125rem 0.5rem rgba(0,0,0,0.10);
   --shadow-2: 0 0.5rem 1rem rgba(0,0,0,0.12);
+  
   /* RGB versions for gradients (r, g, b) */
   --color-primary-rgb: 91,45,155;
   --color-accent-rgb: 243,156,18;
@@ -60,6 +62,52 @@ body {
   width: 100%;
   box-shadow: var(--shadow-1);
 }
+
+/* Top bar inside the navbar for contact details */
+.top-bar {
+  background: rgba(0,0,0,0.06); 
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
+.top-bar .top-bar-content { 
+  display:flex; 
+  justify-content:
+   flex-start; 
+   align-items: center;
+ }
+
+.top-bar .contact { 
+  display: flex; 
+  gap: 0.75rem; 
+  align-items: center; 
+  color: var(--color-white);
+  font-size: 0.9rem;
+ }
+
+.top-bar .contact a { 
+  color: var(--color-white);
+   text-decoration: none; 
+}
+
+.top-bar .contact a:hover { 
+  color: var(--color-accent); 
+  text-decoration: none;
+ }
+
+.top-bar .sep { 
+  opacity: 0.6; 
+}
+
+/* Icon spacing in top contact bar */
+.top-bar .contact i {
+  margin-right: 0.4rem;
+  font-size: 0.95rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
 .nav-content {
   display: flex;
   justify-content: space-between;
@@ -695,6 +743,9 @@ body {
 
 /* Responsive*/
 @media (max-width:48rem){ /* 768px - include tablets */
+
+    .top-bar .top-bar-content { justify-content: flex-start; }
+  .top-bar .contact { font-size: 0.85rem; }
 
   .nav-content{
     gap:0.5rem
