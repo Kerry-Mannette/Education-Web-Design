@@ -568,6 +568,7 @@ body {
     }
 
     /*footer*/
+
 .site-footer {
   position: fixed;               /* hidden offscreen initially, then slid up */
   left: 0;
@@ -594,25 +595,22 @@ body {
 /* internal grid container */
 .footer-grid {
   display: grid;
-  gap: 1.25rem;
+  gap: 2rem;
   align-items: start;
   justify-items: stretch;
+  
 }
 
 /* Top row wraps left brand and right links */
+
 .footer-top {
   display: grid;
   grid-template-columns: 1fr 2fr; /* left column (brand) and right group */
   color: #000;
-  padding: 2rem 1rem;
-}
+  padding-left: 3rem;
+} 
 
-.footer-top .container {
-  max-width: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0 1rem; 
-}
+
 
 .footer-brand {
   display: flex;
@@ -628,12 +626,32 @@ body {
   display: block;
 }
 
+/* Contact info*/
+.footer-contact {
+  padding-left: 3.5rem; /* align with logo */
+  margin-top: 1rem;
+  margin-bottom: 1rem; /* space before social links */
+  font-size: 0.95rem;
+
+}
+
+.footer-contact i {
+  color: #ffffff; /* neutral gray for icons */
+  margin-right: 0.4rem;
+}
+
+.footer-contact a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 0.3rem;
+}
+
 /* Social links — small icons on a single row under the logo */
 .footer-social {
   display: flex;
   gap: 0.5rem;
-  align-items: center;
-  margin-top: 0.25rem;
+  margin-left: 5rem;
+  margin-top: 0.5rem;
 }
 
 
@@ -658,9 +676,9 @@ body {
 /* RIGHT side — 5 equal columns */
 .footer-links-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1px;
-  align-items: start;
+  grid-template-columns: repeat(4, 1fr);
+  justify-self: end;
+  gap: 2rem;
 }
 
 /* Each small column */
