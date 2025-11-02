@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Slideshow
    let slideIndex = 1;
+  let autoAdvance = true; // Track if auto-advance is enabled
+  let slideInterval = null; // Store the interval reference
   showSlides(slideIndex);
 
   function plusSlides(n) {
@@ -44,23 +46,49 @@ document.addEventListener('DOMContentLoaded', () => {
   function showSlides(n) {
     const slides = document.getElementsByClassName("mySlides");
     const dots = document.getElementsByClassName("dot");
+    const status = document.getElementById('carousel-status');
 
     if (slides.length === 0) return;
 
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
 
-    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-    for (let i = 0; i < dots.length; i++) dots[i].className = dots[i].className.replace(" active", "");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+      slides[i].setAttribute('aria-hidden', 'true');
+      slides[i].setAttribute('tabindex', '-1');
+    }
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+      dots[i].removeAttribute('aria-current');
+    }
 
     slides[slideIndex - 1].style.display = "flex";
-    if (dots[slideIndex - 1]) dots[slideIndex - 1].className += " active";
+    slides[slideIndex - 1].setAttribute('aria-hidden', 'false');
+    slides[slideIndex - 1].setAttribute('tabindex', '0');
+    if (dots[slideIndex - 1]) {
+      dots[slideIndex - 1].className += " active";
+      dots[slideIndex - 1].setAttribute('aria-current', 'true');
+    }
+
+    if (status) status.textContent = `Slide ${slideIndex} of ${slides.length}`;
+  }
+
+  // Function to stop auto-advance
+  function stopAutoAdvance() {
+    if (slideInterval) {
+      clearInterval(slideInterval);
+      slideInterval = null;
+      autoAdvance = false;
+    }
   }
 
   // Respect reduced motion: don't auto-advance slides
   if (!prefersReducedMotion) {
-    setInterval(() => {
-      plusSlides(1);
+    slideInterval = setInterval(() => {
+      if (autoAdvance) {
+        plusSlides(1);
+      }
     }, 4000);
   }
 
@@ -68,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dots = document.getElementsByClassName("dot");
   for (let i = 0; i < dots.length; i++) {
     dots[i].addEventListener('click', () => {
+      stopAutoAdvance(); // Stop auto-advance when user clicks a dot
       currentSlide(i + 1);
     });
   }
@@ -78,15 +107,37 @@ const nextArrow = document.querySelector('.arrow-controls .next');
 
 if (prevArrow) {
   prevArrow.addEventListener('click', () => {
+    stopAutoAdvance(); // Stop auto-advance when user clicks prev arrow
     plusSlides(-1); 
   });
 }
 
 if (nextArrow) {
   nextArrow.addEventListener('click', () => {
+    stopAutoAdvance(); // Stop auto-advance when user clicks next arrow
     plusSlides(1); 
   });
 }
+
+  // Stop auto-advance when user clicks on a slide
+  const slides = document.getElementsByClassName("mySlides");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].addEventListener('click', () => {
+      stopAutoAdvance();
+    });
+  }
+
+  // Keyboard navigation within carousel (Left/Right/Home/End)
+  const carousel = document.querySelector('.alumni-carousel');
+  if (carousel) {
+    carousel.addEventListener('keydown', (e) => {
+      const key = e.key;
+      if (key === 'ArrowLeft') { e.preventDefault(); stopAutoAdvance(); plusSlides(-1); }
+      if (key === 'ArrowRight') { e.preventDefault(); stopAutoAdvance(); plusSlides(1); }
+      if (key === 'Home') { e.preventDefault(); stopAutoAdvance(); currentSlide(1); }
+      if (key === 'End') { e.preventDefault(); stopAutoAdvance(); currentSlide(document.getElementsByClassName('mySlides').length); }
+    });
+  }
 
 });
 
@@ -129,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
   animateStats(); // Run on load in case section is already in view
 });
 
-// Accessible dropdowns: toggle with click and keyboard
+// Accessible dropdowns to toggle with click and keyboard
 document.addEventListener('DOMContentLoaded', () => {
   const dropdownItems = document.querySelectorAll('.has-dropdown');
   function closeAll(except) {

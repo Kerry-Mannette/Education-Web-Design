@@ -14,13 +14,14 @@ html {
    /* Palette */
    --color-primary: #5B2D9B; /* deep purple */
    --color-accent:  #F39C12; /* warm orange */
-   --color-danger:  #E94E3C; /* bright red */
+  
 
    /* Neutrals */
    --color-bg:     #ffffff;
    --color-text:   #333333;
    --color-muted:  #666666;
-  /* Convenience aliases */
+
+  /* Additional neutrals */
   --color-white:  #ffffff;
   --color-surface: #ffffff; /* use for card surfaces */
   --color-border: #dddddd; /* subtle border */
@@ -44,6 +45,11 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 /* Visually hidden utility for accessible labels */
@@ -163,6 +169,14 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .nav-links a {
   text-decoration: none;
   color: var(--color-bg);
+}
+
+
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.dropdown-toggle:hover,
+.dropdown-toggle:focus-visible {
+  color: var(--color-accent);
 }
 
 
@@ -508,7 +522,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 
 
-
 /* About */
 .about-section {
   padding: 2rem 0;
@@ -527,10 +540,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   grid-area: text;
 }
 
-.about-images { 
-  grid-area: im; 
-}
-
 .about-image {
   display: flex;
   flex-direction: column;
@@ -538,8 +547,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   align-items: center; 
 }
 
-.about-image img,
-.about-images img {
+.about-image img {
   width: 100%;
   max-width: 28rem; 
   height: auto;
@@ -552,8 +560,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   will-change: transform;
 }
 
-.about-image img:hover,
-.about-images img:hover {
+.about-image img:hover {
   transform: scale(1.035);
   box-shadow: var(--shadow-2);
 }
@@ -608,10 +615,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   object-fit: cover;
   display: block;
   border-bottom: 0.0625rem solid #ffffff;
-}
-
-.card-content {
-  padding: 1rem;
 }
 
 .news-card h4 {
@@ -728,21 +731,15 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   display: inline-block;
   cursor: pointer;
   transition: background-color 0.3s;
+  border: 0;
+  padding: 0;
+  line-height: 0;
 }
 
 .dot-controls .dot.active {
   background-color: var(--color-accent);
 }
 
-
-.arrow-controls span{
-  cursor: pointer;
-  transition: color 0.3s;
-}
-.arrow-controls span:hover{
-  color: #F39C12;
-
-}
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -756,8 +753,8 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   transition: 0.3s ease;
   border-radius: 3px;
   transform: translateY(-50%);
-
-
+  background: transparent;
+  border: 0;
 }
 
 .prev {
@@ -778,29 +775,16 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 
 /* Footer */
-.footer {
-  background: var(--color-primary);
-  padding: 2rem 0;
-  text-align: center;
-}
-.footer-links {
-  margin-bottom: 1rem;
-}
-.footer-links a {
-  margin: 0 0.5rem;
-  text-decoration: none;
-  color: var(--color-text);
-}
-
 .site-footer {
   position: relative;               
   left: 0;
   right: 0;
   bottom: 0;
-  
   width: 100%;
   margin-top: 5rem;
 }
+
+
 /* internal grid container */
 .footer-grid {
   display: grid;
@@ -810,7 +794,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   
 }
 
-/* Top row wraps left brand and right links */
 
 .footer-top {
   display: grid;
@@ -828,12 +811,14 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   gap: 0.75rem;
 }
 
+
 /*Logo size in footer*/
 .site-footer .logo img {
   height: 8rem; /* 128px */
   width: auto;
   display: block;
 }
+
 
 /* Contact info*/
 .footer-contact {
@@ -853,6 +838,12 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   color: var(--color-primary);
   text-decoration: none;
   margin-right: 0.3rem;
+}
+
+
+.footer-contact a:hover,
+.footer-contact a:focus-visible {
+  color: var(--color-accent);
 }
 
 /* Social links */
@@ -880,21 +871,28 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .footer-links-grid a:hover {
   opacity: 1;
   transform: translateY(-2px);
-  color: var(--color-secondary);
+  color: var(--color-accent);
 }
 
-/* RIGHT side 5 equal columns */
+/* Keyboard users should get the same highlight */
+.footer-links-grid a:focus-visible {
+  color: var(--color-accent);
+}
+
+
 .footer-links-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* four equal columns */
   justify-self: end;
   gap: 2rem;
 }
+
 
 /* Each small column */
 .footer-col {
   min-width: 0; 
 }
+
 
 /* Headings bold */
 .footer-heading {
@@ -903,6 +901,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   color: var(--color-primary);
   font-size: 0.95rem;
 }
+
 
 /* lists */
 .footer-list {
@@ -922,7 +921,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   display: inline-block;
 }
 
-/* Bottom row copyright centered across grid */
+
 .footer-bottom {
   grid-column: 1 / -1;
   text-align: center;
@@ -931,7 +930,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 
-/* Alumni spacing  */
+/* Alumni spacing */
 .alumni-section {
   margin-bottom: 2rem; 
 }
@@ -944,7 +943,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 
 .footer-bottom {
-  padding-bottom: 0.75rem; /* add bottom padding for breathing room */
+  padding: 0.75rem; 
 }
 
 /* End Footer */
@@ -1051,6 +1050,39 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .next{
   right: -38px;
 }
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 2rem;
+  align-items: start;
+  padding: 2rem 3rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-contact {
+  padding-left: 2rem;
+  margin-top: 1rem;
+}
+
+.footer-social {
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 3rem;
+  justify-items: start;
+}
+
 }
 
 
@@ -1176,7 +1208,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
      line-height: 1.4; 
   }
 
-  .about-images img, .about-image img { 
+  .about-image img { 
     max-width: 100%;
      height: auto; 
   }
@@ -1269,6 +1301,29 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   right: -38px;
 }
 
+.footer-brand img {
+  height: 4.5rem;
+}
+
+.footer-contact {
+  font-size: 0.85rem;
+}
+
+.footer-social {
+  justify-content: center;
+  margin: 0 auto;   
+  gap: 0.5rem;
+}
+
+
+.footer-links-grid {
+  gap: 3rem;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+}
+
 }
 
 /* Reduce motion for users who prefer it */
@@ -1279,42 +1334,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     }
 }
 
-/*Footer adjustments*/
-/* ===== Tablets (<=1024px / 64rem) ===== */
-@media (max-width: 64rem) {
-  .footer-top {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* logo+contact/social | link grid */
-    gap: 2rem;
-    align-items: start;
-    padding: 2rem 3rem;
-  }
-
-  .footer-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .footer-contact {
-    padding-left: 2rem;
-    margin-top: 1rem;
-  }
-
-  .footer-social {
-    margin-top: 1rem;
-    justify-content: center;
-  }
-
-  /* make link area 2x2 grid inline with brand section */
-  .footer-links-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 3rem;
-    justify-items: start;
-  }
-}
 
 /* ===== Phones (<=768px / 48rem) ===== */
 @media (max-width: 48rem) {
@@ -1363,32 +1382,5 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
   .footer-heading {
     margin-bottom: 0.5rem;
-  }
-}
-
-/* ===== Small phones (<=480px / 30rem) ===== */
-@media (max-width: 30rem) {
-  
-  .footer-brand img {
-    height: 4.5rem;
-  }
-
-  .footer-contact {
-    font-size: 0.85rem;
-  }
-
-  .footer-social {
-    justify-content: center;
-    margin: 0 auto;   
-    gap: 0.5rem;
-  }
-  
-
-  .footer-links-grid {
-    gap: 3rem;
-  }
-  
-  .footer-bottom p {
-    font-size: 0.8rem;
   }
 }
