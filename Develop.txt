@@ -2,3 +2,6 @@ Develop by:
            Kirk
            Simone
            Kerry Mannette
+
+
+This activity on transforming Costaatt's current homepage to be more responsive, and improve its navigation for mobile and tablet users was a refreshing exercise. Our design uses HTML 5 semantic tags, ARIA roles and labels, keyboard skips that skips straight to the main section of the homepage. Additionally, our design reduced a lot of images to improve the speeds for mobile and tablet users and presents a cleaner UI and simple navigation. However, there are some areas need improving, such as properly adjusting the images sizes properly to increase mobile users
