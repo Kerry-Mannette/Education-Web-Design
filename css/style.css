@@ -699,6 +699,20 @@ body {
   background-color: #F39C12;
 }
 
+.arrow-controls{
+   display: flex;
+   margin-top: 1rem;
+   font-size: 1.5rem;
+   cursor: pointer;
+   justify-content: flex-end;
+   gap:1rem;
+}
+
+.arrow-controls span:hover{
+  color: #F39C12;
+
+}
+
 
 /*Alumni End*/
 

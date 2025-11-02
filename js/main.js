@@ -67,4 +67,21 @@ document.addEventListener('DOMContentLoaded', () => {
       currentSlide(i + 1);
     });
   }
+
+  // arrow click functionality
+const prevArrow = document.querySelector('.arrow-controls .prev');
+const nextArrow = document.querySelector('.arrow-controls .next');
+
+if (prevArrow) {
+  prevArrow.addEventListener('click', () => {
+    plusSlides(-1); 
+  });
+}
+
+if (nextArrow) {
+  nextArrow.addEventListener('click', () => {
+    plusSlides(1); 
+  });
+}
+
 });
