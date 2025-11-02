@@ -1201,6 +1201,11 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     1fr; gap: 1.75rem;
    }
 
+   .news-card img{
+    width: 100%;
+    height: auto;
+   }
+
   /* Alumni stack */
    .alumni-section {
      padding: 1rem 0.5rem;

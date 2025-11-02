@@ -184,22 +184,42 @@
     <h3>News and Events</h3>
     <div class="news-grid">
       <div class="news-card">
-        <img src="img\clubs.avif" alt="Event 1"  width="350" height="230" loading="lazy" decoding="async"/>
+      <picture>
+        <source srcset="img/clubs-350-avif"  media="(max-width: 30rem)">
+        <source srcset="img/clubs-700-avif"  media="(max-width: 64rem)">
+        <img
+        src ="img/clubs.avif" alt="Sports Partnership" width="350" height="230" loading="lazy" decoding="async">
+      </picture>
         <h4>Partnering Up</h4>
         <p>COSTAATT is proud to support the School Club Leadership Academy 2025! The programme is in its third year and aims to build leadership capacity at our secondary schools from the ground up, in a mini-MBA type program.</p>
       </div>
       <div class="news-card">
-        <img src="img\apply.avif" alt="Event 2" width="350" height="230" loading="lazy"   decoding="async"/>
+        <picture>
+        <source srcset="img/apply-350-avif"  media="(max-width: 30rem)">
+        <source srcset="img/apply-700-avif"  media="(max-width: 64rem)">
+        <img
+        src ="img/apply.avif" alt="Apply now" width="350" height="230" loading="lazy" decoding="async">
+      </picture>
         <h4>Apply Now</h4>
         <p>Get a Headstart in 2026 and Apply Now! We are offering future skills for future Creatives, Healthcare Professionals, Educators and Entrepreneurs. </p>
       </div>
       <div class="news-card">
-        <img src="img\techhub.avif" alt="Event 3" width="350" height="230" loading="lazy" decoding="async"/>
+        <picture>
+        <source srcset="img/techhub-350-avif"  media="(max-width: 30rem)">
+        <source srcset="img/techhub-700-avif"  media="(max-width: 64rem)">
+        <img
+        src ="img/techhub.avif" alt="Launch of New Tech Hub" width="350" height="230" loading="lazy" decoding="async">
+      </picture>
         <h4>Tech-Hub Launch</h4>
         <p>The College of Science, Technology and Applied Arts of Trinidad and Tobago (COSTAATT) officially launched its TechHub and Upskilling Academy on Tuesday, October 14, 2025, at its City Campus rooftop.  </p>
       </div>
         <div class="news-card">
-        <img src="img\brochure.avif" alt="Event 4"  width="350" height="230" loading="lazy" decoding="async"/>
+        <picture>
+        <source srcset="img/brochure-350-avif"  media="(max-width: 30rem)">
+        <source srcset="img/brochure-700-avif"  media="(max-width: 64rem)">
+        <img
+        src ="img/brochure.avif" alt="Gain Inpsiration" width="350" height="230" loading="lazy" decoding="async">
+      </picture>
         <h4>Inspiration</h4>
         <p>The College of Science, Technology and Applied Arts of Trinidad and Tobago (COSTAATT) proudly unveils the Upskilling Academy — a transformative initiative designed to empower individuals and organizations with practical, future-ready skills.</p>
       </div>
@@ -275,7 +295,7 @@
       
       <div class="footer-brand">
         <a href="#" class="logo" aria-label="COSTAATT home">
-          <img src="img/LOGO-color-new.svg" alt="COSTAATT logo" />
+          <img src="img/LOGO-color-new.svg" alt="COSTAATT logo" fetchpriority="high" />
         </a>
 
         <div class="footer-contact" aria-label="COSTAATT contact information">
