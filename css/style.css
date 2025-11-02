@@ -797,8 +797,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--color-primary);
-  color: var(--color-bg);
+  
   width: 100%;
   margin-top: 5rem;
 }
@@ -816,7 +815,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .footer-top {
   display: grid;
   grid-template-columns: 1fr 2fr; 
-  background-color: #ffffff; /* change top to white */
+  background-color: #ffff; /* change top to white */
   color: var(--color-primary);
   padding-left: 7rem;
   
@@ -928,6 +927,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   grid-column: 1 / -1;
   text-align: center;
   border-top: 0; 
+  background: var(--color-primary);
 }
 
 
@@ -1293,13 +1293,13 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   }
 
   .footer-contact {
-    padding-left: 0;
+    padding-left: 2rem;
     margin-top: 1rem;
   }
 
   .footer-social {
     margin-top: 1rem;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   /* make link area 2x2 grid inline with brand section */
@@ -1338,6 +1338,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   .footer-social {
     justify-content: center;
     flex-wrap: wrap;
+    margin: 0 auto;  
     gap: 0.75rem;
   }
 
@@ -1362,6 +1363,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 /* ===== Small phones (<=480px / 30rem) ===== */
 @media (max-width: 30rem) {
+  
   .footer-brand img {
     height: 4.5rem;
   }
@@ -1372,13 +1374,15 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
   .footer-social {
     justify-content: center;
+    margin: 0 auto;   
     gap: 0.5rem;
   }
+  
 
   .footer-links-grid {
-    gap: 1rem;
+    gap: 3rem;
   }
-
+  
   .footer-bottom p {
     font-size: 0.8rem;
   }
