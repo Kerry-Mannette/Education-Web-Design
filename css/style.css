@@ -928,6 +928,12 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border-top: 0; 
 }
 
+
+/* Alumni spacing  */
+.alumni-section {
+  margin-bottom: 2rem; 
+}
+
 .footer-bottom p {
   color: rgba(255,255,255,0.92);
   font-size: 0.9rem;
@@ -1184,13 +1190,17 @@ a:focus-visible, button:focus-visible, input:focus-visible {
      padding: 1rem 0.5rem; 
     }
   .news-section .news-grid { 
-    display: grid; grid-template-columns: 1fr; gap: 1.75rem;
+    display: grid; grid-template-columns: 
+    1fr; gap: 1.75rem;
    }
 
   /* Alumni stack */
    .alumni-section {
      padding: 1rem 0.5rem;
   }
+  .alumni-section {
+     margin-bottom: 1.5rem;
+     }
 
 .mySlides {
   display: flex;
