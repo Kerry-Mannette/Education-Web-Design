@@ -816,9 +816,10 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .footer-top {
   display: grid;
   grid-template-columns: 1fr 2fr; 
-  color: #000;
-  padding-left: 3rem;
-  margin-top: 2rem;
+  background-color: #ffffff; /* change top to white */
+  color: var(--color-primary);
+  padding-left: 7rem;
+  
 } 
 
 .footer-brand {
@@ -837,20 +838,20 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 /* Contact info*/
 .footer-contact {
-  padding-left: 3.5rem; 
-  margin-top: 1rem;
+  padding-left: 2rem; 
+  margin-top: 0.5rem;
   margin-bottom: 1rem; 
   font-size: 0.95rem;
 
 }
 
 .footer-contact i {
-  color: #ffffff; 
+  color: var(--color-primary); 
   margin-right: 0.4rem;
 }
 
 .footer-contact a {
-  color: #ffffff;
+  color: var(--color-primary);
   text-decoration: none;
   margin-right: 0.3rem;
 }
@@ -859,8 +860,9 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .footer-social {
   display: flex;
   gap: 0.5rem;
-  margin-left: 5rem;
-  margin-top: 0.5rem;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+  
 }
 
 /* individual social link style */
@@ -869,7 +871,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: var(--color-bg);
+  color: var(--color-primary);
   font-size: 1.125rem;
   opacity: 0.95;
 }
@@ -879,6 +881,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .footer-links-grid a:hover {
   opacity: 1;
   transform: translateY(-2px);
+  color: var(--color-secondary);
 }
 
 /* RIGHT side 5 equal columns */
@@ -898,7 +901,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .footer-heading {
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: var(--color-bg);
+  color: var(--color-primary);
   font-size: 0.95rem;
 }
 
@@ -913,7 +916,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 .footer-list a {
-  color: rgba(255,255,255,0.95);
+  color: var(--color-primary);
   text-decoration: none;
   font-weight: 400;
   font-size: 0.9rem;
@@ -924,7 +927,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .footer-bottom {
   grid-column: 1 / -1;
   text-align: center;
-  padding-top: 0.5rem;
   border-top: 0; 
 }
 
@@ -1272,3 +1274,112 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     }
 }
 
+/*Footer adjustments*/
+/* ===== Tablets (<=1024px / 64rem) ===== */
+@media (max-width: 64rem) {
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* logo+contact/social | link grid */
+    gap: 2rem;
+    align-items: start;
+    padding: 2rem 3rem;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-contact {
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+
+  .footer-social {
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+
+  /* make link area 2x2 grid inline with brand section */
+  .footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 3rem;
+    justify-items: start;
+  }
+}
+
+/* ===== Phones (<=768px / 48rem) ===== */
+@media (max-width: 48rem) {
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    align-items: center;
+  }
+
+  .footer-brand img {
+    height: 5rem;
+  }
+
+  .footer-contact {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+  }
+
+  .footer-social {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  /* stack all links under the brand section */
+  .footer-links-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .footer-col {
+    width: 100%;
+  }
+
+  .footer-heading {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ===== Small phones (<=480px / 30rem) ===== */
+@media (max-width: 30rem) {
+  .footer-brand img {
+    height: 4.5rem;
+  }
+
+  .footer-contact {
+    font-size: 0.85rem;
+  }
+
+  .footer-social {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .footer-links-grid {
+    gap: 1rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+}
