@@ -621,18 +621,84 @@ body {
 
 .alumni-section {
   padding: 2rem 0;
+  text-align: center;
+  background-color: var(--color-cream);
 }
-.alumni-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
+
+.alumni-section h3 {
+  font-size: 1.5rem;
 }
-.alumni-content img {
+
+.alumni-carousel {
+  position: relative;
   width: 100%;
-  max-width: 25rem; /* 400px */
-  height: auto;
 }
+
+.mySlides {
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: left;
+  border-radius: 12px;
+}
+
+.mySlides img {
+  width: 40%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 9px;
+}
+
+.alumni-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  gap: 0.5rem;
+}
+
+.info-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  font-weight: 600;
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.value {
+  font-weight: 500;
+  color: #000;
+  line-height: 1.4;
+}
+
+.dot-controls {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.dot-controls .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #000;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot-controls .dot.active {
+  background-color: #F39C12;
+}
+
 
 /*Alumni End*/
 
@@ -891,18 +957,47 @@ body {
    }
 
   /* Alumni stack */
-  .alumni-section {
+   .alumni-section {
      padding: 1rem 0.5rem;
   }
 
-  .alumni-content { 
-    flex-direction: column; align-items: flex-start; gap: 1rem; 
+.mySlides {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
   }
 
-  .alumni-content img { 
-    max-width: 100%;
+  .mySlides img{
+    max-width: 75%;
     height: auto;
-}
+    display: block;
+    margin : 0 auto;
+
+
+  }
+  .alumni-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .info-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .label {
+    width: 150px;
+    text-align: center;
+  }
 
   /* Footer*/
   .footer { 

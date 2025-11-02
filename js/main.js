@@ -3,27 +3,68 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('.navbar');
   const btn = navbar && navbar.querySelector('.nav-toggle');
   const panel = navbar && navbar.querySelector('.menu-panel');
-  if (!navbar || !btn) return;
+  if (navbar && btn) {
+    const setOpen = (open) => {
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navbar.classList.toggle('menu-open', open);
+      const icon = btn.querySelector('i');
+      if (icon) icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
 
-  const setOpen = (open) => {
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    navbar.classList.toggle('menu-open', open);
-    const icon = btn.querySelector('i');
-    if (icon) icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  };
+    btn.addEventListener('click', () =>
+      setOpen(btn.getAttribute('aria-expanded') !== 'true')
+    );
 
-  btn.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navbar.classList.contains('menu-open')) setOpen(false);
+    });
 
-  // Close on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navbar.classList.contains('menu-open')) setOpen(false);
-  });
+    // Close when clicking outside the menu-panel
+    document.addEventListener('click', (e) => {
+      if (!navbar.classList.contains('menu-open')) return;
+      if (panel && !panel.contains(e.target) && !btn.contains(e.target)) setOpen(false);
+    });
+  }
 
-  // Close when clicking outside the menu-panel
-  document.addEventListener('click', (e) => {
-    if (!navbar.classList.contains('menu-open')) return;
-    if (panel && !panel.contains(e.target) && !btn.contains(e.target)) setOpen(false);
-  });
+// Slideshow
+   let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("dot");
+
+    if (slides.length === 0) return;
+
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+
+    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    for (let i = 0; i < dots.length; i++) dots[i].className = dots[i].className.replace(" active", "");
+
+    slides[slideIndex - 1].style.display = "flex";
+    if (dots[slideIndex - 1]) dots[slideIndex - 1].className += " active";
+  }
+
+  setInterval(() => {
+    plusSlides(1);
+  }, 5000);
+
+ //dot click functionality
+  const dots = document.getElementsByClassName("dot");
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener('click', () => {
+      currentSlide(i + 1);
+    });
+  }
 });
-
