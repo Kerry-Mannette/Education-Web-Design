@@ -722,18 +722,18 @@ body {
   font-size: 3rem;
   transition: 0.3s ease;
   border-radius: 3px;
-  transform: translateY(2000%);
+  transform: translateY(-50%);
 
 
 }
 
 .prev {
-  left: 0;
+  left: -38px;
   border-radius: 0 3px 3px 0;
 }
 
 .next {
-  right: 0;
+  right: -38px;
   border-radius: 3px 0 0 3px;
 }
 .prev:hover,
@@ -852,10 +852,17 @@ body {
   }
  .prev, 
  .next{
-  transform: translateY(3500%);
   top:50%;
   font-size: 1.75rem;
   padding: 10px;
+}
+
+.prev{
+  left:-38px;
+}
+
+.next{
+  right: -38px;
 }
 }
 
@@ -1051,7 +1058,6 @@ body {
 
   .prev, 
  .next{
-  transform: translateY(6500%);
   top:50%;
   font-size: 1.75rem;
   padding: 10px;
@@ -1060,11 +1066,11 @@ body {
 }
 
 .prev{
-  left:-8px;
+  left:-38px;
 }
 
 .next{
-  right: -8px;
+  right: -38px;
 }
   /* Footer*/
   .footer { 
