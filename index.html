@@ -16,6 +16,9 @@
 </head>
 <body>
 
+  <!-- Skip to main content for keyboard users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Navigation -->
   <header class="navbar">
     <!-- Top bar: contact info -->
@@ -42,16 +45,16 @@
         <nav aria-label="Main navigation">
           <ul class="nav-links">
             <li class="has-dropdown">
-              <button class="dropdown-toggle" aria-expanded="false">Admissions <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
-              <ul class="dropdown-menu" aria-label="Admissions submenu">
+              <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="menu-admissions">Admissions <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
+              <ul class="dropdown-menu" id="menu-admissions" role="menu" aria-label="Admissions submenu">
                 <li><a href="#">Admissions Counselor</a></li>
                 <li><a href="#">Application Process</a></li>
                 <li><a href="#">Financing</a></li>
               </ul>
             </li>
             <li class="has-dropdown">
-              <button class="dropdown-toggle" aria-expanded="false">Academics <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
-              <ul class="dropdown-menu" aria-label="Academics submenu">
+              <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="menu-academics">Academics <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
+              <ul class="dropdown-menu" id="menu-academics" role="menu" aria-label="Academics submenu">
                 <li><a href="#">Programme Categories</a></li>
                 <li><a href="#">Programme Details</a></li>
                 <li><a href="#">Departments</a></li>
@@ -59,8 +62,8 @@
               </ul>
             </li>
             <li class="has-dropdown">
-              <button class="dropdown-toggle" aria-expanded="false">Student Services <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
-              <ul class="dropdown-menu" aria-label="Student services submenu">
+              <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="menu-services">Student Services <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
+              <ul class="dropdown-menu" id="menu-services" role="menu" aria-label="Student services submenu">
                 <li><a href="#">Campus Facilities</a></li>
                 <li><a href="#">Campus Life</a></li>
                 <li><a href="#">Clubs and Activities</a></li>
@@ -69,8 +72,8 @@
               </ul>
             </li>
             <li class="has-dropdown">
-              <button class="dropdown-toggle" aria-expanded="false">Community <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
-              <ul class="dropdown-menu" aria-label="Community submenu">
+              <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="menu-community">Community <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
+              <ul class="dropdown-menu" id="menu-community" role="menu" aria-label="Community submenu">
                 <li><a href="#">Corporate and Community Services</a></li>
                 <li><a href="#">Facility Rental Services</a></li>
                 <li><a href="#">Translation and Interpreting Services</a></li>
@@ -82,6 +85,7 @@
 
         <div class="nav-search">
           <form action="#" role="search">
+            <label for="site-search" class="sr-only">Search the site</label>
             <input id="site-search" name="q" type="search" placeholder="Search" />
             <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
           </form>
@@ -96,7 +100,9 @@
       </div>
     </div>
   </header>
+  
   <!-- Hero Section -->
+  <main id="main-content" tabindex="-1">
   <section class="hero-section">
 
   <!-- Background video -->
@@ -168,7 +174,7 @@
       </div>
 
       <div class="about-image">
-        <img src="img/COSTATT-Port-of-Spain-Campus-18.jpeg" alt="About Image" />
+        <img src="img/COSTATT-Port-of-Spain-Campus-18.jpeg" alt="About Image" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
@@ -178,22 +184,22 @@
     <h3>News and Events</h3>
     <div class="news-grid">
       <div class="news-card">
-        <img src="img\clubs.png" alt="Event 1" />
+  <img src="img\clubs.png" alt="Event 1" loading="lazy" decoding="async" />
         <h4>Partnering Up</h4>
         <p>COSTAATT is proud to support the School Club Leadership Academy 2025! The programme is in its third year and aims to build leadership capacity at our secondary schools from the ground up, in a mini-MBA type program.</p>
       </div>
       <div class="news-card">
-        <img src="img\apply.jpg" alt="Event 2" />
+  <img src="img\apply.jpg" alt="Event 2" loading="lazy" decoding="async" />
         <h4>Apply Now</h4>
         <p>Get a Headstart in 2026 and Apply Now! We are offering future skills for future Creatives, Healthcare Professionals, Educators and Entrepreneurs. </p>
       </div>
       <div class="news-card">
-        <img src="img\techhub.jpg" alt="Event 3" />
+  <img src="img\techhub.jpg" alt="Event 3" loading="lazy" decoding="async" />
         <h4>Tech-Hub Launch</h4>
         <p>The College of Science, Technology and Applied Arts of Trinidad and Tobago (COSTAATT) officially launched its TechHub and Upskilling Academy on Tuesday, October 14, 2025, at its City Campus rooftop.  </p>
       </div>
         <div class="news-card">
-        <img src="img\brochure.jpg" alt="Event 4" />
+  <img src="img\brochure.jpg" alt="Event 4" loading="lazy" decoding="async" />
         <h4>Inspiration</h4>
         <p>The College of Science, Technology and Applied Arts of Trinidad and Tobago (COSTAATT) proudly unveils the Upskilling Academy — a transformative initiative designed to empower individuals and organizations with practical, future-ready skills.</p>
       </div>
@@ -212,7 +218,7 @@
 
   <div class="alumni-carousel">
     <div class="mySlides">
-      <img src="img/Gabrielle-Martin.png" alt="Alumni success" />
+  <img src="img/Gabrielle-Martin.png" alt="Alumni success" loading="lazy" decoding="async" />
       <div class="alumni-info">
         <div class="info-row"><span class="label">Name:</span><span class="value">Gabrielle-Martin</span></div>
         <div class="info-row"><span class="label">Degree Program:</span><span class="value"><strong>AS Spanish</strong></span></div>
@@ -225,7 +231,7 @@
     <span class="next">&#10095;</span>
   </div>
     <div class="mySlides">
-      <img src="img/akeela.png" alt="Alumni success" />
+  <img src="img/akeela.png" alt="Alumni success" loading="lazy" decoding="async" />
       <div class="alumni-info">
         <div class="info-row"><span class="label">Name:</span><span class="value">Akeela Martin</span></div>
         <div class="info-row"><span class="label">Degree Program:</span><span class="value"><strong>Bachelor Degree in Mass Communication</strong></span></div>
@@ -235,7 +241,7 @@
     </div>
 
     <div class="mySlides">
-      <img src="img/rissa.png" alt="Alumni success" />
+  <img src="img/rissa.png" alt="Alumni success" loading="lazy" decoding="async" />
       <div class="alumni-info">
         <div class="info-row"><span class="label">Name:</span><span class="value">Rissa Fridy</span></div>
         <div class="info-row"><span class="label">Degree Program:</span><span class="value"><strong>AAS in IT and Operation Systems Management</strong></span></div>
@@ -255,6 +261,8 @@
 
  
 </section>
+
+  </main>
 
 
   
