@@ -622,11 +622,12 @@ body {
 .alumni-section {
   padding: 2rem 0;
   text-align: center;
-  background-color: var(--color-cream);
+  background-color: rgba(var(--color-primary-rgb), 0.06);
 }
 
 .alumni-section h3 {
   font-size: 1.5rem;
+  color: #000;
 }
 
 .alumni-carousel {
@@ -671,6 +672,7 @@ body {
   font-weight: 600;
   width: 150px;
   flex-shrink: 0;
+  color: #000;
 }
 
 .value {
@@ -696,24 +698,49 @@ body {
 }
 
 .dot-controls .dot.active {
-  background-color: #F39C12;
+  background-color: var(--color-accent);
 }
 
-.arrow-controls{
-   display: flex;
-   margin-top: 1rem;
-   font-size: 1.5rem;
-   cursor: pointer;
-   justify-content: flex-end;
-   gap:1rem;
-}
 
+.arrow-controls span{
+  cursor: pointer;
+  transition: color 0.3s;
+}
 .arrow-controls span:hover{
   color: #F39C12;
 
 }
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px;
+  margin-top: -22px;
+  color: #000; 
+  font-weight: bold;
+  font-size: 3rem;
+  transition: 0.3s ease;
+  border-radius: 3px;
+  transform: translateY(2000%);
 
 
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  color: #F39C12;
+
+}
 /*Alumni End*/
 
 
@@ -823,8 +850,16 @@ body {
     text-align: left;
     padding: 0.25rem 0;
   }
-
+ .prev, 
+ .next{
+  transform: translateY(3500%);
+  top:50%;
+  font-size: 1.75rem;
+  padding: 10px;
 }
+}
+
+
 
 /* Responsive*/
 @media (max-width:48rem){ /* 768px - include tablets */
@@ -895,6 +930,7 @@ body {
   }
 
 }
+
 
 /* Phone breakpoint: 480px == 30rem (1rem = 16px) */
 @media (max-width:30rem) {
@@ -1013,6 +1049,23 @@ body {
     text-align: center;
   }
 
+  .prev, 
+ .next{
+  transform: translateY(6500%);
+  top:50%;
+  font-size: 1.75rem;
+  padding: 10px;
+  
+  
+}
+
+.prev{
+  left:-8px;
+}
+
+.next{
+  right: -8px;
+}
   /* Footer*/
   .footer { 
     padding: 1rem 0.5rem;

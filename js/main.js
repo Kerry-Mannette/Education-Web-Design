@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setInterval(() => {
     plusSlides(1);
-  }, 5000);
+  }, 2000);
 
  //dot click functionality
   const dots = document.getElementsByClassName("dot");
