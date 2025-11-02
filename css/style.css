@@ -1177,6 +1177,8 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   .about-images img, .about-image img { 
     max-width: 100%;
      height: auto; 
+     object-fit: cover;
+     aspect-ratio: 3/2;
   }
 
   /* Stats stack vertically */
