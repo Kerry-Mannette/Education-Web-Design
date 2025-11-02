@@ -800,7 +800,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   background: var(--color-primary);
   color: var(--color-bg);
   width: 100%;
-  margin-top: auto;
+  margin-top: 5rem;
 }
 /* internal grid container */
 .footer-grid {
