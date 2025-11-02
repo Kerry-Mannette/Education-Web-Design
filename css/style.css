@@ -1072,18 +1072,154 @@ body {
 .next{
   right: -38px;
 }
-  /* Footer*/
-  .footer { 
-    padding: 1rem 0.5rem;
-     text-align: left; 
-  
-  }
-  
-  .view-more button { 
-    padding: 0.45rem 1rem;
-     font-size: 0.95rem; 
-  }
 
 }
+
+  /* Footer */
+.site-footer {
+  position: relative;               
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  width: 100%;
+  margin-top: auto;
+}
+/* internal grid container */
+.footer-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+  justify-items: stretch;
+  
+}
+
+/* Top row wraps left brand and right links */
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* left column (brand) and right group */
+  color: #000;
+  padding-left: 3rem;
+  margin-top: 2rem;
+} 
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left-justify */
+  gap: 0.75rem;
+}
+
+/* Increase logo */
+.logo img {
+  height: 8rem; /* 128px */
+  width: auto;
+  display: block;
+}
+
+/* Contact info*/
+.footer-contact {
+  padding-left: 3.5rem; /* align with logo */
+  margin-top: 1rem;
+  margin-bottom: 1rem; /* space before social links */
+  font-size: 0.95rem;
+
+}
+
+.footer-contact i {
+  color: #ffffff; /* neutral gray for icons */
+  margin-right: 0.4rem;
+}
+
+.footer-contact a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 0.3rem;
+}
+
+/* Social links — small icons on a single row under the logo */
+.footer-social {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 5rem;
+  margin-top: 0.5rem;
+}
+
+/* individual social link style */
+.footer-social .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-bg);
+  font-size: 1.125rem;
+  opacity: 0.95;
+}
+
+/* Slight hover feedback */
+.footer-social .social-link:hover,
+.footer-links-grid a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* RIGHT side — 5 equal columns */
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-self: end;
+  gap: 2rem;
+}
+
+/* Each small column */
+.footer-col {
+  min-width: 0; /* helps with overflowing text in narrow layouts */
+}
+
+/* Headings bold and slightly larger */
+.footer-heading {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-bg);
+  font-size: 0.95rem;
+}
+
+/* lists */
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-list a {
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+/* Bottom row (copyright) centered across grid */
+.footer-bottom {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding-top: 0.5rem;
+  border-top: 0; /* no visible demarcation per request */
+}
+
+.footer-bottom p {
+  color: rgba(255,255,255,0.92);
+  font-size: 0.9rem;
+  margin: 0;
+}
+/*Footer End*/
+
+
+
 
 
