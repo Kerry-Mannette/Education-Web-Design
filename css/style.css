@@ -623,19 +623,126 @@ body {
 
 .alumni-section {
   padding: 2rem 0;
-}
-.alumni-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-}
-.alumni-content img {
-  width: 100%;
-  max-width: 25rem; /* 400px */
-  height: auto;
+  text-align: center;
+  background-color: rgba(var(--color-primary-rgb), 0.06);
 }
 
+.alumni-section h3 {
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.alumni-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.mySlides {
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: left;
+  border-radius: 12px;
+}
+
+.mySlides img {
+  width: 40%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 9px;
+}
+
+.alumni-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  gap: 0.5rem;
+}
+
+.info-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  font-weight: 600;
+  width: 150px;
+  flex-shrink: 0;
+  color: #000;
+}
+
+.value {
+  font-weight: 500;
+  color: #000;
+  line-height: 1.4;
+}
+
+.dot-controls {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.dot-controls .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #000;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot-controls .dot.active {
+  background-color: var(--color-accent);
+}
+
+
+.arrow-controls span{
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.arrow-controls span:hover{
+  color: #F39C12;
+
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px;
+  margin-top: -22px;
+  color: #000; 
+  font-weight: bold;
+  font-size: 3rem;
+  transition: 0.3s ease;
+  border-radius: 3px;
+  transform: translateY(-50%);
+
+
+}
+
+.prev {
+  left: -38px;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: -38px;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  color: #F39C12;
+
+}
 /*Alumni End*/
 
 
@@ -745,8 +852,23 @@ body {
     text-align: left;
     padding: 0.25rem 0;
   }
-
+ .prev, 
+ .next{
+  top:50%;
+  font-size: 1.75rem;
+  padding: 10px;
 }
+
+.prev{
+  left:-38px;
+}
+
+.next{
+  right: -38px;
+}
+}
+
+
 
 /* Responsive*/
 @media (max-width:48rem){ /* 768px - include tablets */
@@ -817,6 +939,7 @@ body {
   }
 
 }
+
 
 /* Phone breakpoint: 480px == 30rem (1rem = 16px) */
 @media (max-width:30rem) {
@@ -893,31 +1016,212 @@ body {
    }
 
   /* Alumni stack */
-  .alumni-section {
+   .alumni-section {
      padding: 1rem 0.5rem;
   }
 
-  .alumni-content { 
-    flex-direction: column; align-items: flex-start; gap: 1rem; 
+.mySlides {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
   }
 
-  .alumni-content img { 
-    max-width: 100%;
+  .mySlides img{
+    max-width: 75%;
     height: auto;
+    display: block;
+    margin : 0 auto;
+
+
+  }
+  .alumni-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .info-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .label {
+    width: 150px;
+    text-align: center;
+  }
+
+  .prev, 
+ .next{
+  top:50%;
+  font-size: 1.75rem;
+  padding: 10px;
+  
+  
 }
 
-  /* Footer*/
-  .footer { 
-    padding: 1rem 0.5rem;
-     text-align: left; 
-  
-  }
-  
-  .view-more button { 
-    padding: 0.45rem 1rem;
-     font-size: 0.95rem; 
-  }
+.prev{
+  left:-38px;
+}
+
+.next{
+  right: -38px;
+}
 
 }
+
+  /* Footer */
+.site-footer {
+  position: relative;               
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  width: 100%;
+  margin-top: auto;
+}
+/* internal grid container */
+.footer-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+  justify-items: stretch;
+  
+}
+
+/* Top row wraps left brand and right links */
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* left column (brand) and right group */
+  color: #000;
+  padding-left: 3rem;
+  margin-top: 2rem;
+} 
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left-justify */
+  gap: 0.75rem;
+}
+
+/* Increase logo */
+.logo img {
+  height: 8rem; /* 128px */
+  width: auto;
+  display: block;
+}
+
+/* Contact info*/
+.footer-contact {
+  padding-left: 3.5rem; /* align with logo */
+  margin-top: 1rem;
+  margin-bottom: 1rem; /* space before social links */
+  font-size: 0.95rem;
+
+}
+
+.footer-contact i {
+  color: #ffffff; /* neutral gray for icons */
+  margin-right: 0.4rem;
+}
+
+.footer-contact a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 0.3rem;
+}
+
+/* Social links — small icons on a single row under the logo */
+.footer-social {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 5rem;
+  margin-top: 0.5rem;
+}
+
+/* individual social link style */
+.footer-social .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-bg);
+  font-size: 1.125rem;
+  opacity: 0.95;
+}
+
+/* Slight hover feedback */
+.footer-social .social-link:hover,
+.footer-links-grid a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* RIGHT side — 5 equal columns */
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-self: end;
+  gap: 2rem;
+}
+
+/* Each small column */
+.footer-col {
+  min-width: 0; /* helps with overflowing text in narrow layouts */
+}
+
+/* Headings bold and slightly larger */
+.footer-heading {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-bg);
+  font-size: 0.95rem;
+}
+
+/* lists */
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-list a {
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+/* Bottom row (copyright) centered across grid */
+.footer-bottom {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding-top: 0.5rem;
+  border-top: 0; /* no visible demarcation per request */
+}
+
+.footer-bottom p {
+  color: rgba(255,255,255,0.92);
+  font-size: 0.9rem;
+  margin: 0;
+}
+/*Footer End*/
+
+
+
 
 
