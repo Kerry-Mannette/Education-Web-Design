@@ -1114,8 +1114,8 @@ body {
   gap: 0.75rem;
 }
 
-/* Increase logo */
-.logo img {
+/* Increase logo (scoped to footer only to avoid affecting navbar height) */
+.site-footer .logo img {
   height: 8rem; /* 128px */
   width: auto;
   display: block;
