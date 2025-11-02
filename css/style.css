@@ -939,8 +939,13 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-size: 0.9rem;
   margin: 0;
 }
-/*Footer End*/
 
+
+.footer-bottom {
+  padding-bottom: 0.75rem; /* add bottom padding for breathing room */
+}
+
+/* End Footer */
 
 
 /* Tablet breakpoint (<=1024px / 64rem) */
