@@ -85,3 +85,42 @@ if (nextArrow) {
 }
 
 });
+
+// Stats number animate
+document.addEventListener('DOMContentLoaded', () => {
+  const statsSection = document.querySelector('.stats-section');
+  const statsNumbers = document.querySelectorAll('.statistic h3');
+
+  if (!statsSection || statsNumbers.length === 0) return;
+
+  const animateStats = () => {
+    const rect = statsSection.getBoundingClientRect();
+    if (rect.top <= window.innerHeight && rect.bottom >= 0 && !statsSection.classList.contains('animated')) {
+      statsSection.classList.add('animated');
+
+      const duration = 1800; // 1.8 secs
+      const startTime = performance.now();
+      const targets = Array.from(statsNumbers).map(el => parseInt(el.textContent.replace(/,/g, '')));
+      
+      const step = (currentTime) => {
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        statsNumbers.forEach((el, i) => {
+          const value = Math.floor(progress * targets[i]);
+          el.textContent = value.toLocaleString();
+        });
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          // Ensure final numbers are exact
+          statsNumbers.forEach((el, i) => el.textContent = targets[i].toLocaleString());
+        }
+      };
+
+      requestAnimationFrame(step);
+    }
+  };
+
+  window.addEventListener('scroll', animateStats, { passive: true });
+  window.addEventListener('resize', animateStats);
+  animateStats(); // Run on load in case section is already in view
+});
