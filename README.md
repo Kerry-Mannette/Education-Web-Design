@@ -6,8 +6,7 @@ Desktop
 <img width="1755" height="3367" alt="image" src="https://github.com/user-attachments/assets/d91e70c6-5b77-495d-9b7f-6136d1f25fd2" />
 
 Tablet
-<img width="1280" height="4950" alt="image" src="https://github.com/user-attachments/assets/f8bc472b-d60b-44c7-a1b3s-d713555790b3" />
-
+<img width="1280" height="4935" alt="tablet" src="https://github.com/user-attachments/assets/2bff9feb-d4e1-475b-95de-9bfff92a9e85" />
 
 Phone
 
