@@ -15,6 +15,10 @@ Phone
 Mobile Test
 <img width="1093" height="713" alt="image" src="https://github.com/user-attachments/assets/ab37ac9f-46e4-49ac-87c1-d3b2eaadf2f7" />
 
+Desktop Test
+<img width="1092" height="718" alt="image" src="https://github.com/user-attachments/assets/864ae4f9-d105-407b-b621-461c059361da" />
+
+
 Wireframe
 <img width="6492" height="5415" alt="wireframe" src="https://github.com/user-attachments/assets/50d72685-b381-4aa4-938e-cd2ddb0b44b6" />
 
