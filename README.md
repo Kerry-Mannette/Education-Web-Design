@@ -9,7 +9,6 @@ Tablet
 <img width="1280" height="4935" alt="tablet" src="https://github.com/user-attachments/assets/2bff9feb-d4e1-475b-95de-9bfff92a9e85" />
 
 Phone
-
 <img width="469" height="7903" alt="image" src="https://github.com/user-attachments/assets/7dcc2927-01e9-441a-9f89-7f10450c8a4a" />
 
 Mobile Test
