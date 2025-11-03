@@ -4,19 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>COSTAATT | Gain Future Skills Now</title>
+  <!-- Favicon -->
+  <link rel="icon" href="favicon/favicon-new.svg" type="image/svg+xml" />
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
+  
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/96e67bb0d3.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
 
+  <!-- Skip to main content for keyboard users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Navigation -->
   <header class="navbar">
+    <!-- Top bar: contact info -->
+    <div class="top-bar">
+      <div class="container top-bar-content">
+        <div class="contact">
+          <a href="mailto:info@costaatt.edu.tt"><i class="fa-solid fa-envelope" aria-hidden="true"></i>info@costaatt.edu.tt</a>
+          <span class="sep">|</span>
+          <a href="tel:+18682345678"><i class="fa-solid fa-phone" aria-hidden="true"></i>+1 (868) 625 5030</a>
+        </div>
+      </div>
+    </div>
     <div class="container nav-content">
       <a href="#" class="logo" aria-label="COSTAATT home">
-        <img src="img/site-logo-new.svg" alt="COSTAATT logo" />
+        <img src="img/site-logo-new.svg" alt="COSTAATT logo"  fetchpriority="high"/>
       </a>
 
       <!-- Mobile toggle button -->
@@ -27,16 +44,48 @@
       <div class="menu-panel">
         <nav aria-label="Main navigation">
           <ul class="nav-links">
-            <li><a href="#">Admissions</a></li>
-            <li><a href="#">Academics</a></li>
-            <li><a href="#">Student Services</a></li>
-            <li><a href="#">Community</a></li>
+            <li class="has-dropdown">
+              <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="menu-admissions">Admissions <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
+              <ul class="dropdown-menu" id="menu-admissions" role="menu" aria-label="Admissions submenu">
+                <li><a href="#">Admissions Counselor</a></li>
+                <li><a href="#">Application Process</a></li>
+                <li><a href="#">Financing</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="menu-academics">Academics <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
+              <ul class="dropdown-menu" id="menu-academics" role="menu" aria-label="Academics submenu">
+                <li><a href="#">Programme Categories</a></li>
+                <li><a href="#">Programme Details</a></li>
+                <li><a href="#">Departments</a></li>
+
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="menu-services">Student Services <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
+              <ul class="dropdown-menu" id="menu-services" role="menu" aria-label="Student services submenu">
+                <li><a href="#">Campus Facilities</a></li>
+                <li><a href="#">Campus Life</a></li>
+                <li><a href="#">Clubs and Activities</a></li>
+                <li><a href="#">International Students</a></li>
+                <li><a href="#">Student Services</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="menu-community">Community <i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
+              <ul class="dropdown-menu" id="menu-community" role="menu" aria-label="Community submenu">
+                <li><a href="#">Corporate and Community Services</a></li>
+                <li><a href="#">Facility Rental Services</a></li>
+                <li><a href="#">Translation and Interpreting Services</a></li>
+              </ul>
+            </li>
             <li><a href="#">About Us</a></li>
           </ul>
         </nav>
 
         <div class="nav-search">
           <form action="#" role="search">
+            <label for="site-search" class="sr-only">Search the site</label>
             <input id="site-search" name="q" type="search" placeholder="Search" />
             <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
           </form>
@@ -51,8 +100,9 @@
       </div>
     </div>
   </header>
-
+  
   <!-- Hero Section -->
+  <main id="main-content" tabindex="-1">
   <section class="hero-section">
 
   <!-- Background video -->
@@ -115,36 +165,43 @@
   <section class="about-section container">
     <h3>About Us</h3>
     <div class="about-content">
-      <p>COSTAATT is a dynamic and innovative institution committed to providing high-quality education and training opportunities to students. Our mission is to empower individuals through accessible and relevant learning experiences.</p>
-      <div class="about-images">
-        <img src="" alt="About Image" />
+      <div class="about-text">
+        <p>The College of Science, Technology and Applied Arts of Trinidad and Tobago (COSTAATT) is a premier public tertiary institution, established on October 27, 2000, by an Act of Parliament (Act No. 77 of 2000). As one of the largest tertiary institutions in Trinidad and Tobago, COSTAATT offers a diverse range of academic programmes, including certificates, diplomas, associate degrees, and bachelor’s degrees, in critical areas such as health sciences, business, information technology, environmental studies, and applied arts. The College is dedicated to providing accessible, high-quality education that aligns with the needs of the nation’s workforce and contributes to national and regional development.</p>
+
+        <div class="about-actions">
+          <a href="#" class="btn btn-readmore">Read More</a>
+        </div>
+      </div>
+
+      <div class="about-image">
+        <img src="img/COSTATT-Port-of-Spain-Campus-18.avif" alt="About Image" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
 
   <!-- News and Events -->
-  <section class="news-section container">
+<section class="news-section container">
     <h3>News and Events</h3>
     <div class="news-grid">
       <div class="news-card">
-        <img src="" alt="Event 1" />
-        <h4>Event Title</h4>
-        <p>Short description of the event or news item.</p>
+        <img src="img\clubs.avif" alt="Event 1" loading="lazy" decoding="async"/>
+        <h4>Partnering Up</h4>
+        <p>COSTAATT is proud to support the School Club Leadership Academy 2025! The programme is in its third year and aims to build leadership capacity at our secondary schools from the ground up, in a mini-MBA type program.</p>
       </div>
       <div class="news-card">
-        <img src="" alt="Event 2" />
-        <h4>Event Title</h4>
-        <p>Short description of the event or news item.</p>
+        <img src="img\apply.avif" alt="Event 2" loading="lazy"   decoding="async"/>
+        <h4>Apply Now</h4>
+        <p>Get a Headstart in 2026 and Apply Now! We are offering future skills for future Creatives, Healthcare Professionals, Educators and Entrepreneurs. </p>
       </div>
       <div class="news-card">
-        <img src="" alt="Event 3" />
-        <h4>Event Title</h4>
-        <p>Short description of the event or news item.</p>
+        <img src="img\techhub.avif" alt="Event 3" loading="lazy" decoding="async"/>
+        <h4>Tech-Hub Launch</h4>
+        <p>The College of Science, Technology and Applied Arts of Trinidad and Tobago (COSTAATT) officially launched its TechHub and Upskilling Academy on Tuesday, October 14, 2025, at its City Campus rooftop.  </p>
       </div>
         <div class="news-card">
-        <img src="" alt="Event 4" />
-        <h4>Event Title</h4>
-        <p>Short description of the event or news item.</p>
+        <img src="img\brochure.avif" alt="Event 4" loading="lazy" decoding="async"/>
+        <h4>Inspiration</h4>
+        <p>The College of Science, Technology and Applied Arts of Trinidad and Tobago (COSTAATT) proudly unveils the Upskilling Academy — a transformative initiative designed to empower individuals and organizations with practical, future-ready skills.</p>
       </div>
     </div>
     <div class="view-more">
@@ -154,31 +211,164 @@
 
 
 
+
   <!-- Alumni Section -->
-  <section class="alumni-section container">
-    <h3>See Where Our Graduates Are Now</h3>
-    <div class="alumni-content">
-      <img src="" alt="Alumni success" />
-      <p>Discover the career paths and achievements of our alumni across industries and communities.</p>
+<section class="alumni-section container">
+  <h3>See Where Our Graduates Are Now</h3>
+
+  <div class="alumni-carousel" role="region" aria-label="Alumni carousel" tabindex="0">
+    <div class="mySlides" id="slide-1" role="group" aria-roledescription="slide" aria-label="1 of 3" aria-hidden="false">
+      <img src="img/Gabrielle-Martin.avif" alt="Alumni success"  loading="lazy" decoding="async"/>
+      <div class="alumni-info">
+        <div class="info-row"><span class="label">Name:</span><span class="value">Gabrielle-Martin</span></div>
+        <div class="info-row"><span class="label">Degree Program:</span><span class="value"><strong>AS Spanish</strong></span></div>
+        <div class="info-row"><span class="label">Current Role:</span><span class="value"><strong>Entrepreneur, Rejuvinity Body and Nail Spa</strong></span></div>
+        <div class="info-row"><span class="label">Achievements:</span><span class="value">Gabrielle Martin is a dedicated professional with a robust background in finance and small business ownership. Since 2008, she has served the community at Teachers Credit Union, where she currently holds the position of Senior Clerk, developing expertise in financial services and client relations. Complementing her work in finance, Gabrielle is the proud owner of Rejuvenity Body and Nail Spa.</span></div>
+      </div>
     </div>
-  </section>
+      
+    <div class="arrow-controls">
+    <button type="button" class="prev" aria-label="Previous slide">&#10094;</button>
+    <button type="button" class="next" aria-label="Next slide">&#10095;</button>
+  </div>
+  
+    <div class="mySlides" id="slide-2" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
+      <img src="img/rissa.avif" alt="Alumni success"   loading="lazy" decoding="async" />
+      <div class="alumni-info">
+        <div class="info-row"><span class="label">Name:</span><span class="value">Rissa Fridy</span></div>
+        <div class="info-row"><span class="label">Degree Program:</span><span class="value"><strong>AAS in IT and Operation Systems Management</strong></span></div>
+        <div class="info-row"><span class="label">Current Role:</span><span class="value"><strong>Data and Reporting Analyst. Ansa Bank Limited</strong></span></div>
+        <div class="info-row"><span class="label">Achievements:</span><span class="value">She is the data champion behind all the Bank's major projects, from core implementations to digital banking platforms to card system rollouts. Her latest focus is on 4th industrial revolution technologies such as Machine Learning and harnessing Big-Data to facilitate predictive analytics.</span></div>
+      </div>
+    </div>
+
+    <div class="mySlides" id="slide-3" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
+      <img src="img/akeela.avif" alt="Alumni success"    loading="lazy" decoding="async"/>
+      <div class="alumni-info">
+        <div class="info-row"><span class="label">Name:</span><span class="value">Akeela Martin</span></div>
+        <div class="info-row"><span class="label">Degree Program:</span><span class="value"><strong>Bachelor Degree in Mass Communication</strong></span></div>
+        <div class="info-row"><span class="label">Current Role:</span><span class="value"><strong>Senior Government Communications Specialist, Office of the Prime Minister</strong></span></div>
+        <div class="info-row"><span class="label">Achievements:</span><span class="value">Akeela earned global recognition as the 3rd best public speaker in the world among university students, affirming her exceptional talent as an orator.</span></div>
+      </div>
+    </div>
+    <div id="carousel-status" class="sr-only" aria-live="polite"></div>
+  </div>
+
+ 
+
+  <div class="dot-controls" role="tablist" aria-label="Choose slide">
+    <button type="button" class="dot" aria-label="Go to slide 1" aria-controls="slide-1" aria-current="true"></button>
+    <button type="button" class="dot" aria-label="Go to slide 2" aria-controls="slide-2"></button>
+    <button type="button" class="dot" aria-label="Go to slide 3" aria-controls="slide-3"></button>
+  </div>
+
+ 
+</section>
+
+  </main>
+
+
   
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-links">
-        <a href="#">About</a>
-        <a href="#">Programmes</a>
-        <a href="#">Admissions</a>
-        <a href="#">Student Life</a>
-        <a href="#">Contact</a>
-      </div>
-      <p>© 2023 COSTAATT. All Rights Reserved.</p>
-    </div>
-  </footer>
+<footer class="site-footer" aria-labelledby="footer-heading">
+  <div class="footer-grid" role="contentinfo">
+    <!-- Top -->
+    <div class="footer-top">
+      
+      <div class="footer-brand">
+        <a href="#" class="logo" aria-label="COSTAATT home">
+          <img src="img/LOGO-color-new.svg" alt="COSTAATT logo" fetchpriority="high" />
+        </a>
 
- 
+        <div class="footer-contact" aria-label="COSTAATT contact information">
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:info@costaatt.edu.tt">info@costaatt.edu.tt</a>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+18682345678">+1 (868) 625 5030</a>
+          </div>
+        </div>
+
+        <div class="footer-social" aria-label="COSTAATT social links">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <i class="fa-brands fa-square-facebook" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="X">
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      
+      <div class="footer-links-grid" role="navigation" aria-label="Footer quick links">
+
+        <!-- Col 2 -->
+        <div class="footer-col">
+          <h4 class="footer-heading" aria-hidden="true">&nbsp;</h4>
+          <ul class="footer-list">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Admissions</a></li>
+            <li><a href="#">Campus Life</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Legal</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="#">Student Services</a></li>
+            <li><a href="#">Corporate &amp; Community <br> Services</a></li>
+            <li><a href="#">Faculty and Staff Resources</a></li>
+            <li><a href="#">Career Services</a></li>
+            <li><a href="#">Events Calendar</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Learn More</h4>
+          <ul class="footer-list">
+            <li><a href="#">COSTAATT Tech Hub</a></li>
+            <li><a href="#">Innovation Cafe</a></li>
+            <li><a href="#">Alumni Success Stories</a></li>
+            <li><a href="#">Procurement</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5 -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-list">
+            <li><a href="#">Help Desk</a></li>
+            <li><a href="#">Tutoring Centre</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom" role="note">
+      <p>© 2025 COSTAATT. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
   <!-- scripts -->
   <script src="js/main.js" defer></script>
 </body>
