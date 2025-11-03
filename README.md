@@ -10,7 +10,6 @@ Tablet
 
 
 Phone
-
 <img width="469" height="7903" alt="image" src="https://github.com/user-attachments/assets/7dcc2927-01e9-441a-9f89-7f10450c8a4a" />
 
 Wireframe
