@@ -48,10 +48,6 @@ body {
   overflow-x: hidden;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 /* Visually hidden utility for accessible labels */
 .sr-only {
   position: absolute !important;
